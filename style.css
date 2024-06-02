@@ -8,6 +8,14 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
+  overflow: hidden;
+  animation-name: slide;
+  animation-iteration-count: infinite;
+  perspective: 350px;
+}
+
+img {
+  size: 2rem;
 }
 
 p,
@@ -15,14 +23,38 @@ h2 {
   color: yellow;
   font-size: x-large;
   text-align: center;
+  margin-top: 5vh;
 }
 
 h2 {
-  font-size: xx-large;
+  font-size: 3em;
 }
 
 main {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-items: center;
+  animation: slide 20s linear infinite;
+}
+
+.text {
+  width: 70%;
+}
+
+audio {
+  position: fixed;
+  bottom: 1;
+  left: 1;
+}
+
+@keyframes slide {
+  0% {
+    transform: rotatex(25deg) translateY(90%);
+  }
+
+  100% {
+    transform: rotatex(25deg) translateY(-100%);
+  }
 }
